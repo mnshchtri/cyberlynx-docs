@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberLynX Manual | Pentester Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        section {
+            scroll-margin-top: 5rem;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-800">
+
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="w-72 bg-white border-r border-slate-200 flex flex-col hidden lg:flex relative z-50">
+            <div class="p-8 border-b border-slate-200 flex items-center gap-3">
+                <img src="Logo.png" alt="CyberLynX Logo" class="h-10 w-auto flex-shrink-0">
+                <div id="sidebar-logo-text">
+                    <span class="font-bold text-xl block leading-none">CyberLynX</span>
+                    <span class="text-[10px] uppercase tracking-widest font-bold text-slate-400">Documentation</span>
+                </div>
+            </div>
+
+            <nav class="flex-1 overflow-y-auto p-6 space-y-8">
+                <div>
+                    <h5
+                        class="nav-header-text text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-4 px-4">
+                        Fundamentals
+                    </h5>
+                    <div class="space-y-1">
+                        <a href="#introduction"
+                            class="nav-link active flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all">
+                            <i class="fas fa-book-open w-5 text-[#544fe8]"></i> <span
+                                class="nav-text text-nowrap">Introduction</span>
+                        </a>
+                        <a href="#quick-start"
+                            class="nav-link flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all">
+                            <i class="fas fa-bolt w-5"></i> <span class="nav-text text-nowrap">Quick Start</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5
+                        class="nav-header-text text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-4 px-4">
+                        Core Features
+                    </h5>
+                    <div class="space-y-1">
+                        <a href="#workflow"
+                            class="nav-link flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all">
+                            <i class="fas fa-diagram-project w-5"></i> <span class="nav-text text-nowrap">Workflow &
+                                Scans</span>
+                        </a>
+                        <a href="#terminal"
+                            class="nav-link flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all">
+                            <i class="fas fa-terminal w-5"></i> <span class="nav-text text-nowrap">PWA Terminal</span>
+                        </a>
+                        <a href="#payloads"
+                            class="nav-link flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all">
+                            <i class="fas fa-bomb w-5"></i> <span class="nav-text text-nowrap">Payload Engine</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5
+                        class="nav-header-text text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-4 px-4">
+                        Operation</h5>
+                    <div class="space-y-1">
+                        <a href="#teams" class="nav-link flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all">
+                            <i class="fas fa-users w-5"></i> <span class="nav-text text-nowrap">Team Roster</span>
+                        </a>
+                        <a href="#reporting"
+                            class="nav-link flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all">
+                            <i class="fas fa-file-contract w-5"></i> <span class="nav-text text-nowrap">Automated
+                                Reports</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto scroll-smooth">
+            <!-- Header -->
+            <header
+                class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-slate-100 px-12 py-6 flex items-center justify-between z-40">
+                <div class="flex items-center gap-4">
+                    <button id="sidebar-toggle"
+                        class="text-slate-500 hover:text-[#544fe8] transition-colors p-2 hover:bg-slate-100 rounded-lg">
+                        <i class="fas fa-indent text-xl"></i>
+                    </button>
+                    <img src="Logo.png" alt="CyberLynX Logo" class="h-6 w-auto lg:hidden">
+                    <div class="h-8 w-px bg-slate-200 hidden lg:block mx-2"></div>
+                    <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-500">
+                        <a href="#" class="hover:text-[#544fe8] transition-colors">Documentation</a>
+                        <a href="#" class="hover:text-[#544fe8] transition-colors">API Reference</a>
+                        <a href="#" class="hover:text-[#544fe8] transition-colors">Support</a>
+                    </nav>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button
+                        class="bg-slate-100 text-slate-600 px-4 py-2 rounded-xl text-sm font-bold hover:bg-slate-200 transition-all">Log
+                        In</button>
+                    <button
+                        class="bg-[#544fe8] text-white px-5 py-2 rounded-xl text-sm font-bold shadow-lg shadow-[#544fe8]/20 hover:scale-105 transition-all">Get
+                        Started</button>
+                </div>
+            </header>
+
+            <div class="max-w-4xl mx-auto px-12 py-16">
+                <!-- Introduction -->
+                <section id="introduction" class="mb-24">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 bg-[#544fe8]/5 text-[#544fe8] rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                        <i class="fas fa-star text-[10px]"></i> Manual v2.4
+                    </div>
+                    <h1 class="text-5xl font-extrabold text-slate-900 mb-6 leading-tight">Mastering CyberLynX for <span
+                            class="text-[#544fe8]">Modern Pentesting</span></h1>
+                    <p class="text-xl text-slate-500 leading-relaxed mb-8">
+                        The CyberLynX platform is engineered for speed, collaboration, and high-fidelity discovery. This
+                        manual guides you through the advanced workflows required to perform comprehensive security
+                        assessments across diverse infrastructures.
+                    </p>
+
+                    <div class="my-12 group relative transition-all">
+                        <img src="intelligence_center.png" alt="CyberLynX Intelligence Center"
+                            class="rounded-[2rem] border border-slate-200 shadow-2xl transition-transform group-hover:scale-[1.01]">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-10">
+                            <div>
+                                <p class="text-white text-lg font-bold mb-1">Intelligence Center</p>
+                                <p class="text-white/80 text-sm">Real-time operational telemetry and cross-engagement
+                                    analytics.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 mb-2">Automation First</h4>
+                            <p class="text-sm text-slate-500">Offload repetitive reconnaissance to our workflow engine.
+                            </p>
+                        </div>
+                        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 mb-2">Integrated Exploitation</h4>
+                            <p class="text-sm text-slate-500">Go from scan to shell without leaving your browser
+                                environment.</p>
+                        </div>
+                        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 mb-2">Team Sync</h4>
+                            <p class="text-sm text-slate-500">Real-time asset tracking and findings sharing for
+                                professional teams.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="border-slate-100 mb-24">
+
+                <!-- Quick Start / Intelligence Center Demo -->
+                <section id="quick-start" class="mb-24">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                        <i class="fas fa-bolt text-amber-500 text-2xl"></i> Quick Start Dashboard
+                    </h2>
+                    <p class="text-slate-500 mb-10 leading-relaxed">
+                        Every operation begins at the <strong>Intelligence Center</strong>. This dynamic dashboard
+                        provides a
+                        high-level view of your current engagement progress, health scores, and critical alerts.
+                    </p>
+
+                    <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 mb-12">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Scans</p>
+                                <h3 class="text-xl font-bold">12</h3>
+                            </div>
+                            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Criticals
+                                </p>
+                                <h3 class="text-xl font-bold text-rose-500">0</h3>
+                            </div>
+                            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Targets
+                                </p>
+                                <h3 class="text-xl font-bold text-[#544fe8]">1</h3>
+                            </div>
+                            <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Score</p>
+                                <h3 class="text-xl font-bold text-[#544fe8]">98%</h3>
+                            </div>
+                        </div>
+                        <div class="h-48 bg-white rounded-2xl p-4 border border-slate-100">
+                            <canvas id="scanningChartSmall"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Workflow Section -->
+                <section id="workflow" class="mb-24">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                        <i class="fas fa-diagram-project text-[#544fe8] text-2xl"></i> Automated Workflows
+                    </h2>
+                    <div class="prose prose-slate max-w-none text-slate-600">
+                        <p>The <strong>Workflow Engine</strong> is where the heavy lifting happens. Instead of manually
+                            running
+                            tools, you define "Blueprints" that chain together reconnaissance, vulnerability scanning,
+                            and data parsing.</p>
+
+                        <h4 class="text-slate-900 font-bold mb-4">Key Capabilities:</h4>
+                        <ul class="space-y-3 mb-8">
+                            <li><strong>Visual Blueprinting:</strong> Drag and drop tools like Nmap, Subfinder, and
+                                Nuclei into a canvas to build complex logic without writing a single line of code.</li>
+                            <li><strong>Intelligent Chaining:</strong> Automatically pass data between nodes (e.g.,
+                                feeding discovered subdomains from Subfinder directly into Httpx for service probing).
+                            </li>
+                            <li><strong>Conditional Execution:</strong> Define branch logic to trigger specialized tools
+                                only when specific conditions are met (e.g., running SQLMap only if a parameter-rich
+                                endpoint is found).</li>
+                        </ul>
+
+                        <div class="my-10 group relative transition-all">
+                            <img src="workflow_builder.png" alt="CyberLynX Workflow Builder"
+                                class="rounded-[2rem] border border-slate-200 shadow-2xl transition-transform group-hover:scale-[1.01]">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                                <p class="text-white text-sm font-medium">Example: Automated Subdomain & Service
+                                    Discovery Blueprint</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-indigo-50 p-8 rounded-3xl border border-indigo-100">
+                            <h4 class="text-indigo-900 font-bold mb-3 flex items-center gap-2">
+                                <i class="fas fa-lightbulb"></i> Pro Tip: Scaling Your Recon
+                            </h4>
+                            <p class="text-indigo-800 text-sm leading-relaxed last:mb-0">
+                                Combine <strong>Subfinder</strong> for passive discovery with <strong>Httpx</strong> for
+                                active probing. By
+                                chaining these nodes, you can identify live web servers across thousands of subdomains
+                                in minutes, with Lynx automatically handles the deduplication and sorting of results.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Terminal Section -->
+                <section id="terminal" class="mb-24">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                        <i class="fas fa-terminal text-slate-600 text-2xl"></i> Integrated Terminal (PWA)
+                    </h2>
+
+                    <p class="text-slate-600 leading-relaxed mb-10 text-lg">
+                        Manual control is often necessary for advanced exploitation and environment management. The
+                        <strong>CyberLynX System Terminal</strong> provides a seamless, high-performance bridge between
+                        your browser
+                        and the target infrastructure.
+                    </p>
+
+                    <div class="my-10 group relative transition-all">
+                        <img src="system_terminal.png" alt="CyberLynX System Terminal"
+                            class="rounded-[2rem] border border-slate-200 shadow-2xl transition-transform group-hover:scale-[1.01]">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                            <p class="text-white text-sm font-medium">Standard bash shell environment with integrated
+                                CyberLynX utilities.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                                <i class="fas fa-microchip text-slate-400"></i> Command Execution
+                            </h4>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                                Execute system-level commands, manage local files, and run custom pentesting scripts.
+                                The terminal supports full ANSI escape sequences, ensuring compatibility with
+                                interactive tools like top, vim, and Metasploit.
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex items-center gap-2"><i
+                                        class="fas fa-check text-emerald-500 text-[10px]"></i> Persistent sessions (PWA
+                                    Support)</li>
+                                <li class="flex items-center gap-2"><i
+                                        class="fas fa-check text-emerald-500 text-[10px]"></i> Integrated SSH/SFTP
+                                    clients</li>
+                                <li class="flex items-center gap-2"><i
+                                        class="fas fa-check text-emerald-500 text-[10px]"></i> Instant session recording
+                                    for audits</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                                <i class="fas fa-hdd text-slate-400"></i> Persistent Workspace
+                            </h4>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                                Each engagement is backed by a dedicated, persistent disk volume. Your tools, wordlists,
+                                and loot remain available across sessions and are automatically synced with your team
+                                members.
+                            </p>
+                            <div class="bg-indigo-50 p-6 rounded-2xl border border-indigo-100">
+                                <p class="text-indigo-900 text-xs font-bold uppercase tracking-wider mb-2">Engage Sync
+                                </p>
+                                <p class="text-indigo-800 text-[13px] leading-relaxed mb-0 italic">
+                                    "Drop a file in ~/loot and your entire team sees it in real-time."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Payload Engine -->
+                <section id="payloads" class="mb-24">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                        <i class="fas fa-bomb text-rose-500 text-2xl"></i> Payload Engine
+                    </h2>
+                    <div class="relative overflow-hidden group bg-slate-50 rounded-[2rem] border border-slate-100 p-10">
+                        <div class="relative z-10 max-w-lg">
+                            <p class="text-slate-600 mb-6 leading-relaxed text-lg">
+                                Generate obfuscated payloads, reverse shells, and custom injection strings on the fly.
+                                The <strong>Payload Engine</strong> includes a library of bypass techniques for modern
+                                WAFs and EDRs.
+                            </p>
+                            <div class="flex gap-4">
+                                <button
+                                    class="bg-slate-900 text-white px-6 py-3 rounded-2xl font-bold hover:bg-slate-800 transition-all">Generate
+                                    Payload</button>
+                                <button class="text-slate-500 hover:text-slate-900 font-bold transition-all">Explore
+                                    Library</button>
+                            </div>
+                        </div>
+                        <i
+                            class="fas fa-microchip absolute -right-10 -bottom-10 text-[180px] text-slate-200/50 transform rotate-12 transition-transform group-hover:scale-110"></i>
+                    </div>
+                </section>
+
+                <!-- Team Roster -->
+                <section id="teams" class="mb-24">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                        <i class="fas fa-users text-[#544fe8] text-2xl"></i> Tactical Units & Collaboration
+                    </h2>
+
+                    <p class="text-slate-600 leading-relaxed mb-10 text-lg">
+                        CyberLynX is built for teams. The <strong>Tactical Units</strong> interface allows you to manage
+                        secure
+                        collaboration environments, deploy specialized nodes, and synchronize operational data across
+                        your entire strike team in real-time.
+                    </p>
+
+                    <div class="my-10 group relative transition-all">
+                        <img src="tactical_units.png" alt="CyberLynX Tactical Units"
+                            class="rounded-[2rem] border border-slate-200 shadow-2xl transition-transform group-hover:scale-[1.01]">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                            <p class="text-white text-sm font-medium">Secure Collaboration Environment Management.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                                <i class="fas fa-sitemap text-slate-400"></i> Operational Segregation
+                            </h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                Create isolated tactical workspaces for different client engagements. Each unit
+                                maintains its own set of tools, logs, and findings, ensuring zero data leakage between
+                                operations.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                                <i class="fas fa-user-shield text-slate-400"></i> Role-Based Access
+                            </h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">
+                                Define Commanders, Operators, and Observers. Granular permissions ensure that only
+                                authorized team members can deploy new units or export sensitive reporting data.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Reporting & Teams -->
+                <section id="reporting" class="mb-24">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                        <i class="fas fa-file-contract text-blue-500 text-2xl"></i> Automated Reporting
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <p class="text-slate-600 leading-relaxed mb-6">
+                                Professional reporting shouldn't take days. CyberLynX automatically maps findings to
+                                <strong>OWASP Top 10</strong> and <strong>CWE</strong> frameworks, generating executive
+                                summaries and technical
+                                details in PDF, HTML, and Markdown.
+                            </p>
+                            <div class="h-64 bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                                <canvas id="severityChartManual"></canvas>
+                            </div>
+                        </div>
+                        <ul class="space-y-6">
+                            <li class="flex gap-4">
+                                <div
+                                    class="w-12 h-12 bg-[#544fe8]/5 rounded-2xl flex-shrink-0 flex items-center justify-center text-[#544fe8]">
+                                    <i class="fas fa-check-double"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-1">CVSS Scoring</h4>
+                                    <p class="text-sm text-slate-500">Industry-standard severity calculation for every
+                                        finding.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div
+                                    class="w-12 h-12 bg-blue-50 rounded-2xl flex-shrink-0 flex items-center justify-center text-blue-500">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-1">One-Click Export</h4>
+                                    <p class="text-sm text-slate-500">Export beautiful, client-ready reports instantly.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div
+                                    class="w-12 h-12 bg-amber-50 rounded-2xl flex-shrink-0 flex items-center justify-center text-amber-500">
+                                    <i class="fas fa-code-merge"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-1">Bug Bounty Ready</h4>
+                                    <p class="text-sm text-slate-500">Triage and export findings to HackerOne/Bugcrowd.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Help Button -->
+                <div class="fixed bottom-10 right-10 flex flex-col items-end gap-4 z-50">
+                    <div id="helpBox"
+                        class="bg-white p-6 rounded-3xl shadow-2xl border border-slate-100 w-72 mb-2 hidden animate-fade-in">
+                        <h4 class="font-bold mb-2">Need Help?</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed mb-4">Our AI security assistant is available
+                            24/7 to help you with payloads and tool configurations.</p>
+                        <button
+                            class="w-full bg-[#544fe8] text-white py-2 rounded-xl text-xs font-bold shadow-lg shadow-[#544fe8]/20 hover:bg-[#4338ca] transition-all">Chat
+                            with Lynx AI</button>
+                    </div>
+                    <button id="helpBtn"
+                        class="w-14 h-14 bg-[#544fe8] hover:bg-[#4338ca] text-white rounded-2xl flex items-center justify-center shadow-xl shadow-[#544fe8]/30 transition-all hover:scale-110">
+                        <i class="fas fa-comment-dots text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Footer -->
+                <footer class="pt-16 mt-24 border-t border-slate-100 text-center">
+                    <p class="text-slate-400 text-sm">© 2026 CyberLynX Security Platforms. All rights reserved.</p>
+                    <div class="flex justify-center gap-6 mt-4 mb-16">
+                        <a href="#"
+                            class="text-slate-400 hover:text-emerald-500 text-xs font-bold uppercase tracking-wider transition-colors">Twitter</a>
+                        <a href="#"
+                            class="text-slate-400 hover:text-emerald-500 text-xs font-bold uppercase tracking-wider transition-colors">GitHub</a>
+                        <a href="#"
+                            class="text-slate-400 hover:text-emerald-500 text-xs font-bold uppercase tracking-wider transition-colors">Discord</a>
+                    </div>
+                </footer>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
