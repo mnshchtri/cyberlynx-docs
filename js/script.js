@@ -1,5 +1,5 @@
 /**
- * CyberLynX Documentation Core Script (Technical Wiki Edition)
+ * CyberLynX Documentation Core Script (Enterprise Edition)
  * Follows SOLID principles for modularity and maintainability.
  */
 
@@ -43,30 +43,28 @@ class NavigationManager {
             }
         });
 
-        this.updateActiveLinks(currentId);
+        if (currentId) {
+            this.updateActiveLinks(currentId);
+        }
     }
 
     updateActiveLinks(id) {
         this.navLinks.forEach(link => {
             const href = link.getAttribute('href').slice(1);
             const isActive = href === id;
-            link.classList.toggle('text-blue-600', isActive);
-            link.classList.toggle('border-b-2', isActive);
-            link.classList.toggle('border-blue-600', isActive);
-            link.classList.toggle('pb-1', isActive);
             
-            // If not active, ensure text color returns to normal
-            if (!isActive) {
-                link.classList.remove('text-blue-600');
-                link.classList.add('text-slate-600');
-            } else {
+            if (isActive) {
+                link.classList.add('text-blue-600', 'border-b-2', 'border-blue-600', 'pb-1');
                 link.classList.remove('text-slate-600');
+            } else {
+                link.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600', 'pb-1');
+                link.classList.add('text-slate-600');
             }
         });
     }
 }
 
-// 3. Chart Manager
+// 3. Chart Manager (Visual Progress Sim)
 class ChartManager {
     static initAll() {
         this.initScanningChart();
@@ -78,7 +76,7 @@ class ChartManager {
         
         const ctx = el.getContext('2d');
         const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-        gradient.addColorStop(0, 'rgba(37, 99, 235, 0.5)');
+        gradient.addColorStop(0, 'rgba(37, 99, 235, 0.4)');
         gradient.addColorStop(1, 'rgba(37, 99, 235, 0)');
 
         new Chart(ctx, {
@@ -86,16 +84,13 @@ class ChartManager {
             data: {
                 labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00', '23:59'],
                 datasets: [{
-                    data: [25, 40, 35, 75, 50, 95, 80],
-                    borderColor: '#60a5fa',
+                    data: [20, 35, 30, 85, 45, 90, 70],
+                    borderColor: '#3b82f6',
                     backgroundColor: gradient,
                     fill: true,
                     tension: 0.4,
-                    borderWidth: 4,
-                    pointRadius: 4,
-                    pointBackgroundColor: '#fff',
-                    pointBorderColor: '#60a5fa',
-                    pointBorderWidth: 2
+                    borderWidth: 3,
+                    pointRadius: 0 // Cleaner for this UI
                 }]
             },
             options: {
@@ -103,8 +98,8 @@ class ChartManager {
                 maintainAspectRatio: false,
                 plugins: { legend: { display: false } },
                 scales: {
-                    x: { ticks: { color: 'rgba(255,255,255,0.4)', font: { size: 11 } }, grid: { display: false } },
-                    y: { ticks: { display: false }, grid: { color: 'rgba(255,255,255,0.05)' } }
+                    x: { ticks: { color: 'rgba(255,255,255,0.3)', font: { size: 10 } }, grid: { display: false } },
+                    y: { ticks: { display: false }, grid: { color: 'rgba(255,255,255,0.03)' } }
                 }
             }
         });
@@ -115,5 +110,5 @@ class ChartManager {
 document.addEventListener('DOMContentLoaded', () => {
     new NavigationManager();
     ChartManager.initAll();
-    console.log('CyberLynX Documentation Initialized (Technical Wiki Mode)');
+    console.log('CyberLynX Documentation Initialized (Enterprise Legal Edition)');
 });

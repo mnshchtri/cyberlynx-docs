@@ -45,9 +45,9 @@
             <nav class="hidden md:flex gap-8 text-sm font-semibold text-slate-600">
                 <a href="#introduction" class="hover:text-blue-600 transition-colors">Overview</a>
                 <a href="#getting-started" class="hover:text-blue-600 transition-colors">Setup</a>
-                <a href="#user-guide" class="hover:text-blue-600 transition-colors">User Guide</a>
-                <a href="#developer-guide" class="hover:text-blue-600 transition-colors">Extensibility</a>
-                <a href="#security" class="hover:text-blue-600 transition-colors">Security</a>
+                <a href="#cicd" class="hover:text-blue-600 transition-colors">CI/CD</a>
+                <a href="#project-structure" class="hover:text-blue-600 transition-colors">Project Map</a>
+                <a href="#legal" class="hover:text-blue-600 transition-colors">Legal</a>
             </nav>
 
             <div class="flex-1 flex justify-end items-center gap-6">
@@ -69,7 +69,7 @@
                     CyberLynX: <span class="text-blue-600">Official Documentation</span>
                 </h1>
                 <p class="text-xl text-slate-600 mb-12 leading-relaxed">
-                    Welcome to the official documentation for CyberLynX, a self-hosted, centralized penetration testing orchestration platform designed for independent security researchers, freelance testers, and academic enthusiasts.
+                    Advanced Security Orchestration & Automation Platform. Centralize toolsets, automate report generation, and manage targets with a modular platform designed for modern penetration testing missions.
                 </p>
                 <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
                     <a href="https://cyberlynx.manishkarki7.com.np" class="bg-blue-600 text-white px-10 py-4 rounded-lg text-lg font-bold shadow-xl hover:bg-blue-700 transition-all">Get Started</a>
@@ -89,211 +89,229 @@
         <!-- 1. Introduction & Overview -->
         <section id="overview" class="mb-40">
             <h2 class="font-['Outfit'] text-4xl font-bold text-slate-900 mb-8">1. Introduction & Overview</h2>
-            <h3 class="text-2xl font-bold text-slate-800 mb-4">What is CyberLynX?</h3>
             <p class="text-lg text-slate-600 mb-12 leading-relaxed">
-                CyberLynX is an advanced web application engineered to centralize and automate the penetration testing workflow. It directly addresses the inefficiencies of "tool-hopping" and manual data aggregation by providing a unified environment where practitioners can manage target infrastructures, orchestrate disparate command-line tools, and fully automate the reporting process.
+                CyberLynX is a comprehensive security tool designed to orchestrate, automate, and centralize security scanning and vulnerability analysis. It provides a unified interface for security professionals to manage distributed tools and analyze security data efficiently.
             </p>
 
+            <h3 class="text-2xl font-bold text-slate-800 mb-8">🛠 Integrated Security Stack</h3>
             <div class="grid md:grid-cols-2 gap-8 mb-16">
                 <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                    <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="fas fa-desktop text-blue-500"></i> Unified Dashboard
-                    </h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">Manage engagements, projects, and target scopes (IPs, domains, URLs) from a single interface.</p>
+                    <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2"><i class="fas fa-network-wired text-blue-500"></i> Network Discovery</h4>
+                    <p class="text-sm text-slate-500 font-mono">Nmap, Naabu</p>
                 </div>
                 <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                    <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="fas fa-terminal text-emerald-500"></i> Tool Orchestration
-                    </h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">Execute industry-standard CLI tools (Nmap, Nikto, SQLMap, etc.) directly from the web UI.</p>
+                    <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2"><i class="fas fa-shield-virus text-emerald-500"></i> Vulnerability Scanning</h4>
+                    <p class="text-sm text-slate-500 font-mono">Nuclei, Nikto, Trivy</p>
                 </div>
                 <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                    <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="fas fa-link text-rose-500"></i> Workflow Chaining
-                    </h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">Pass tool outputs directly into next-step inputs (e.g., Subfinder output piped to Nmap).</p>
+                    <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2"><i class="fas fa-search-location text-rose-500"></i> Reconnaissance</h4>
+                    <p class="text-sm text-slate-500 font-mono">Subfinder, HTTpx</p>
                 </div>
                 <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                    <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="fas fa-file-pdf text-amber-500"></i> Automated Reporting
-                    </h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">Aggregate normalized JSON findings to automatically generate professional HTML and PDF reports.</p>
+                    <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2"><i class="fas fa-spider text-amber-500"></i> Fuzzing & Crawling</h4>
+                    <p class="text-sm text-slate-500 font-mono">FFuf, Katana</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2"><i class="fas fa-microscope text-indigo-500"></i> Analysis</h4>
+                    <p class="text-sm text-slate-500 font-mono">CVEMap, Wappalyzer</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2"><i class="fas fa-user-secret text-slate-700"></i> Exploitation</h4>
+                    <p class="text-sm text-slate-500 font-mono">Hydra, SQLMap</p>
                 </div>
             </div>
 
-            <div class="bg-blue-600 rounded-[2.5rem] p-10 text-white shadow-xl mb-16">
-                <h4 class="text-xl font-bold mb-6">Tech Stack</h4>
-                <div class="grid grid-cols-3 gap-8">
+            <h3 class="text-2xl font-bold text-slate-800 mb-8">🚀 Key Features</h3>
+            <ul class="grid md:grid-cols-2 gap-6 mb-16">
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-microchip text-blue-500 mt-1"></i>
                     <div>
-                        <span class="block text-blue-200 text-[10px] uppercase tracking-widest font-bold mb-1">Frontend</span>
-                        <span class="font-bold">React.js SPA</span>
+                        <span class="font-bold text-slate-900 block">Multi-Architecture Support</span>
+                        <span class="text-sm text-slate-500">Native builds for both linux/amd64 and linux/arm64.</span>
                     </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-cogs text-emerald-500 mt-1"></i>
                     <div>
-                        <span class="block text-blue-200 text-[10px] uppercase tracking-widest font-bold mb-1">Backend</span>
-                        <span class="font-bold">Go / Golang</span>
+                        <span class="font-bold text-slate-900 block">Enterprise CI/CD</span>
+                        <span class="text-sm text-slate-500">Fully automated pipeline with Jenkins integration.</span>
                     </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fab fa-docker text-blue-400 mt-1"></i>
                     <div>
-                        <span class="block text-blue-200 text-[10px] uppercase tracking-widest font-bold mb-1">Database</span>
-                        <span class="font-bold">MongoDB Atlas</span>
+                        <span class="font-bold text-slate-900 block">Docker Optimized</span>
+                        <span class="text-sm text-slate-500">Multi-stage, performance-tuned Docker builds.</span>
                     </div>
-                </div>
-            </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <i class="fas fa-layer-group text-rose-400 mt-1"></i>
+                    <div>
+                        <span class="font-bold text-slate-900 block">Scalable Architecture</span>
+                        <span class="text-sm text-slate-500">Go-based backend with a high-performance React frontend.</span>
+                    </div>
+                </li>
+            </ul>
         </section>
 
         <!-- 2. Getting Started -->
         <section id="getting-started" class="mb-40">
-            <h2 class="font-['Outfit'] text-4xl font-bold text-slate-900 mb-8">2. Getting Started (Deployment Guide)</h2>
-            <h3 class="text-2xl font-bold text-slate-800 mb-6">Prerequisites</h3>
-            <p class="text-slate-600 mb-8">Ensure your host environment meets the following requirements:</p>
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
-                <li class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-center gap-3">
-                    <i class="fab fa-golang text-blue-500"></i> <span class="text-sm">Go (v1.20 or higher)</span>
-                </li>
-                <li class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-center gap-3">
-                    <i class="fab fa-node-js text-emerald-500"></i> <span class="text-sm">Node.js & npm (v16+)</span>
-                </li>
-                <li class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-center gap-3">
-                    <i class="fas fa-database text-blue-400"></i> <span class="text-sm">MongoDB Atlas URI</span>
-                </li>
-                <li class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex items-center gap-3">
-                    <i class="fas fa-tools text-slate-500"></i> <span class="text-sm">Tools in system $PATH</span>
-                </li>
-            </ul>
-
-            <h3 class="text-2xl font-bold text-slate-800 mb-8">Installation Steps</h3>
+            <h2 class="font-['Outfit'] text-4xl font-bold text-slate-900 mb-8">2. Getting Started</h2>
             
-            <!-- Step 1 -->
-            <div class="mb-12">
-                <h4 class="font-bold text-slate-900 mb-4">1. Clone the Repository</h4>
-                <div class="bg-slate-900 rounded-2xl p-6 border border-slate-800 font-mono text-sm text-slate-300">
-                    <pre><code>git clone https://github.com/mnshchtri/cyber-lynx-go.git
-cd cyber-lynx-go</code></pre>
+            <div class="bg-blue-50 border border-blue-100 rounded-3xl p-10 mb-12">
+                <h4 class="font-bold text-blue-900 mb-6 flex items-center gap-2"><i class="fas fa-list-check"></i> Prerequisites</h4>
+                <div class="grid sm:grid-cols-3 gap-8">
+                    <div class="flex flex-col">
+                        <span class="text-[10px] uppercase tracking-widest font-bold text-blue-400 mb-1">Runtime</span>
+                        <span class="font-bold text-blue-900">Go 1.25+</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-[10px] uppercase tracking-widest font-bold text-blue-400 mb-1">Environment</span>
+                        <span class="font-bold text-blue-900">Node.js 20+</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-[10px] uppercase tracking-widest font-bold text-blue-400 mb-1">Containerization</span>
+                        <span class="font-bold text-blue-900">Docker (Buildx)</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Step 2 -->
-            <div class="mb-12">
-                <h4 class="font-bold text-slate-900 mb-4">2. Backend Setup (Go)</h4>
-                <p class="text-sm text-slate-500 mb-4 italic">Create a .env file in the backend root:</p>
-                <div class="bg-slate-900 rounded-2xl p-6 border border-slate-800 font-mono text-sm text-emerald-400 mb-6">
-                    <pre><code>PORT=8080
-MONGO_URI=mongodb+srv://&lt;username&gt;:&lt;password&gt;@cluster0.mongodb.net/cyberlynx
-JWT_SECRET=your_super_secret_jwt_key</code></pre>
+            <h3 class="text-2xl font-bold text-slate-800 mb-8">🐳 Quick Start with Docker</h3>
+            <div class="bg-slate-900 rounded-2xl p-8 border border-slate-800 font-mono text-sm text-slate-300 mb-12 shadow-2xl">
+                <div class="text-slate-500 mb-4"># Build the multi-arch image</div>
+                <div class="mb-6">docker build -t cyber-lynx:latest .</div>
+                <div class="text-slate-500 mb-4"># Run the local environment (Dual-container mode)</div>
+                <div class="mb-6">./start-containers.sh</div>
+                <div class="flex gap-10 mt-8 pt-8 border-t border-white/5">
+                    <div>
+                        <span class="block text-[10px] uppercase text-slate-500 mb-1">Frontend</span>
+                        <span class="text-blue-400">http://localhost:3000</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] uppercase text-slate-500 mb-1">Backend API</span>
+                        <span class="text-blue-400">http://localhost:8080</span>
+                    </div>
                 </div>
-                <div class="bg-slate-900 rounded-2xl p-6 border border-slate-800 font-mono text-sm text-slate-300">
-                    <pre><code>cd backend
-go mod tidy
+            </div>
+
+            <h3 class="text-2xl font-bold text-slate-800 mb-8">💻 Local Development</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                    <h4 class="font-bold text-slate-900 mb-4">Backend</h4>
+                    <pre class="font-mono text-xs text-slate-600 bg-white p-4 rounded-lg border border-slate-200"><code>cd backend
+go mod download
 go run main.go</code></pre>
                 </div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="mb-12">
-                <h4 class="font-bold text-slate-900 mb-4">3. Frontend Setup (React)</h4>
-                <div class="bg-slate-900 rounded-2xl p-6 border border-slate-800 font-mono text-sm text-slate-300">
-                    <pre><code>cd ../frontend
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                    <h4 class="font-bold text-slate-900 mb-4">Frontend</h4>
+                    <pre class="font-mono text-xs text-slate-600 bg-white p-4 rounded-lg border border-slate-200"><code>cd frontend
 npm install
 npm start</code></pre>
                 </div>
-                <p class="mt-6 text-slate-500 text-sm">The React SPA will open at <code class="text-blue-600">http://localhost:3000</code>.</p>
             </div>
         </section>
 
-        <!-- 3. User Guide -->
-        <section id="user-guide" class="mb-40">
-            <h2 class="font-['Outfit'] text-4xl font-bold text-slate-900 mb-8">3. User Guide</h2>
+        <!-- 3. CI/CD Pipeline -->
+        <section id="cicd" class="mb-40">
+            <h2 class="font-['Outfit'] text-4xl font-bold text-slate-900 mb-8">3. CI/CD Pipeline</h2>
+            <p class="text-lg text-slate-600 mb-12">CyberLynX includes a robust **Jenkinsfile** that automates the entire lifecycle of the application.</p>
             
-            <div class="space-y-20">
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Authentication & Profiles</h3>
-                    <p class="text-slate-600 mb-6 leading-relaxed">CyberLynX utilizes stateless JSON Web Tokens (JWT) and bcrypt password hashing for secure access. Upon login, the JWT is stored securely in memory to mitigate XSS vulnerabilities.</p>
-                    <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-2xl">
-                        <p class="text-sm text-blue-900 font-medium italic">"Use the Profile tab to update your professional metadata which will be appended to your generated reports."</p>
+            <div class="space-y-6">
+                <div class="flex items-center gap-6 p-6 bg-white border border-slate-200 rounded-2xl hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-stethoscope text-blue-500"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Diagnostics</h4>
+                        <p class="text-sm text-slate-500">Environment and tool verification across multi-arch nodes.</p>
                     </div>
                 </div>
-
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Project & Target Management</h3>
-                    <p class="text-slate-600 mb-6">All engagements in CyberLynX are isolated into Projects. Define your scope by adding Targets (IP addresses, CIDR ranges, subdomains, or URLs).</p>
-                    <div class="bg-white border border-slate-200 rounded-3xl p-4 shadow-xl">
-                        <img src="assets/images/tactical_units.png" alt="Target Management" class="rounded-2xl w-full">
+                <div class="flex items-center gap-6 p-6 bg-white border border-slate-200 rounded-2xl hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i class="fab fa-golang text-emerald-500"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Backend CI</h4>
+                        <p class="text-sm text-slate-500">Dependency management, security linting, and build validation.</p>
                     </div>
                 </div>
-
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Executing Scans & Workflow Orchestration</h3>
-                    <p class="text-slate-600 mb-8 leading-relaxed">To build a workflow, select multiple tools in sequence. For example, configure Subfinder to run first, and configure Nmap to ingest the JSON output of Subfinder's discovered domains.</p>
-                    <div class="bg-slate-900 rounded-3xl p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
-                        <div class="absolute top-0 right-0 p-8 opacity-10">
-                            <i class="fas fa-sitemap text-9xl text-white"></i>
-                        </div>
-                        <h4 class="text-blue-400 font-mono text-sm mb-6">&gt; Workflow Engine Status</h4>
-                        <div class="w-full h-48">
-                            <canvas id="scanningChartSmall"></canvas>
-                        </div>
+                <div class="flex items-center gap-6 p-6 bg-white border border-slate-200 rounded-2xl hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i class="fab fa-react text-amber-500"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Frontend CI</h4>
+                        <p class="text-sm text-slate-500">Automated production-optimized builds and artifact preservation.</p>
                     </div>
                 </div>
-
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Automated Reporting</h3>
-                    <p class="text-slate-600 mb-8 leading-relaxed">The engine consolidates findings, categorizes them by severity (Critical, High, Medium, Low), and exports fully formatted HTML or PDF documents.</p>
+                <div class="flex items-center gap-6 p-6 bg-white border border-slate-200 rounded-2xl hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i class="fab fa-docker text-white"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Docker Orchestration</h4>
+                        <p class="text-sm text-slate-500">Multi-arch builds pushed directly to Docker Hub.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Developer Guide -->
-        <section id="developer-guide" class="mb-40">
-            <h2 class="font-['Outfit'] text-4xl font-bold text-slate-900 mb-8">4. Developer Guide (Extensibility)</h2>
-            <p class="text-lg text-slate-600 mb-12">If you have custom Bash scripts or niche tools, you can integrate them using our **Modular Adapter Pattern**.</p>
+        <!-- 4. Project Structure -->
+        <section id="project-structure" class="mb-40">
+            <h2 class="font-['Outfit'] text-4xl font-bold text-slate-900 mb-8">4. Project Structure</h2>
+            <div class="bg-slate-900 rounded-3xl p-10 font-mono text-sm text-slate-400 border border-slate-800 shadow-2xl overflow-x-auto">
+                <div class="flex items-center gap-2 mb-8">
+                    <div class="w-3 h-3 rounded-full bg-blue-500"></div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-slate-600">cyberlynx-orchestration /</span>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex gap-4"><span class="text-blue-500">├── backend/</span> <span># Go security engine & API</span></div>
+                    <div class="flex gap-4"><span class="text-emerald-500">├── frontend/</span> <span># React professional dashboard</span></div>
+                    <div class="flex gap-4"><span class="text-amber-500">├── Jenkinsfile</span> <span># CI/CD pipeline definition</span></div>
+                    <div class="flex gap-4"><span class="text-blue-400">├── Dockerfile</span> <span># Multi-stage Docker build</span></div>
+                    <div class="flex gap-4"><span class="text-slate-500">└── start-containers.sh</span> <span># Orchestration script</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Legal (ToS & Privacy) -->
+        <section id="legal" class="mb-40">
+            <h2 class="font-['Outfit'] text-4xl font-bold text-slate-900 mb-12">5. Legal & Policies</h2>
             
-            <h3 class="text-2xl font-bold text-slate-800 mb-8">Writing a Custom Go Adapter</h3>
-            <div class="bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 shadow-2xl">
-                <div class="bg-slate-800 px-6 py-3 border-b border-white/5 flex justify-between items-center">
-                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">adapters/interface.go</span>
-                    <span class="text-[10px] text-blue-400 font-bold px-2 py-0.5 rounded bg-blue-400/10">Golang</span>
-                </div>
-                <pre class="p-8 font-mono text-sm text-blue-300"><code>type ToolAdapter interface {
-    Execute(target string, params []string) (RawOutput, error)
-    Parse(output RawOutput) ([]NormalizedFinding, error)
-}</code></pre>
-            </div>
-            <div class="mt-10 grid md:grid-cols-2 gap-8">
+            <div class="grid gap-16">
+                <!-- Terms of Service -->
                 <div>
-                    <h4 class="font-bold text-slate-900 mb-3">Execute Method</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">Write the logic to securely trigger the CLI binary using Go's <code class="text-rose-500">os/exec</code> package. Whitelist parameters to prevent injection.</p>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Terms of Service</h3>
+                    <div class="prose prose-slate text-sm text-slate-600 leading-relaxed space-y-4 max-w-none">
+                        <p>By using CyberLynX, you agree to the following terms:</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>Authorized Use:</strong> You represent that you have explicit permission to scan any target infrastructure you configure within the application.</li>
+                            <li><strong>Liability:</strong> CyberLynX is provided "as is" without warranty. Developers are not responsible for any misuse, data loss, or legal consequences resulting from the platform's operation.</li>
+                            <li><strong>Self-Hosted Integrity:</strong> You are responsible for securing the environment where CyberLynX is hosted.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <h4 class="font-bold text-slate-900 mb-3">Parse Method</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">Map raw CLI output (text/XML) to internal <code class="text-emerald-500">NormalizedFinding</code> JSON structs for MongoDB storage.</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- 5. Security -->
-        <section id="security" class="mb-40">
-            <div class="bg-rose-50 border-2 border-rose-100 rounded-[2.5rem] p-12 relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-12 opacity-5 pointer-events-none">
-                    <i class="fas fa-skull-crossbones text-9xl text-rose-900"></i>
-                </div>
-                <h2 class="font-['Outfit'] text-4xl font-bold text-rose-900 mb-8 flex items-center gap-4">
-                    <i class="fas fa-triangle-exclamation"></i> 5. Security & Best Practices
-                </h2>
-                <div class="bg-rose-600 text-white px-6 py-4 rounded-2xl mb-10 font-bold shadow-lg">
-                    ⚠️ WARNING: CyberLynX executes offensive security tools. Ensure explicit authorization before scanning targets.
-                </div>
-                
-                <div class="space-y-10">
-                    <div>
-                        <h4 class="font-bold text-rose-900 mb-3">Sandboxing</h4>
-                        <p class="text-sm text-rose-800/80 leading-relaxed">Run the Go backend inside a restricted Docker container to limit the blast radius of any potential tool exploitation.</p>
+                <!-- Privacy Policy -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Privacy Policy</h3>
+                    <div class="prose prose-slate text-sm text-slate-600 leading-relaxed space-y-4 max-w-none">
+                        <p>CyberLynX is designed with a **Privacy-First** architecture:</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>No External Tracking:</strong> CyberLynX does not phone home or transmit vulnerability data to external servers.</li>
+                            <li><strong>Data Storage:</strong> All scan results and user profiles are stored in your configured MongoDB instance.</li>
+                            <li><strong>Authentication:</strong> JWT-based sessions ensure that your credentials never leave your local environment.</li>
+                        </ul>
                     </div>
-                    <div>
-                        <h4 class="font-bold text-rose-900 mb-3">Database Security</h4>
-                        <p class="text-sm text-rose-800/80 leading-relaxed">Restrict MongoDB Atlas cluster IP access list only to your static hosting environment. Never use 0.0.0.0/0.</p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-rose-900 mb-3">HTTPS/WSS</h4>
-                        <p class="text-sm text-rose-800/80 leading-relaxed">Always deploy behind a reverse proxy (Nginx/Traefik) with TLS/SSL for end-to-end encryption.</p>
+                </div>
+
+                <!-- License -->
+                <div class="bg-slate-50 rounded-3xl p-10 border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">📄 License</h3>
+                    <p class="text-sm text-slate-600 mb-6 italic">CyberLynX is distributed under the **MIT License**.</p>
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 font-mono text-xs text-slate-500 leading-loose shadow-inner">
+                        Copyright (c) 2026 CyberLynX Maintainers<br><br>
+                        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so.
                     </div>
                 </div>
             </div>
@@ -301,7 +319,7 @@ npm start</code></pre>
 
         <!-- Footer -->
         <footer class="pt-20 border-t border-slate-100 text-center pb-20">
-            <p class="text-slate-400 text-sm">© 2026 CyberLynX Security Platforms. Self-Hosted Sovereign Orchestration.</p>
+            <p class="text-slate-400 text-sm">© 2026 CyberLynX Security Platforms. Open Source MIT Licensed.</p>
             <div class="flex justify-center gap-10 mt-8">
                 <a href="#" class="text-slate-400 hover:text-blue-600 text-xs font-bold uppercase tracking-widest transition-all">Twitter</a>
                 <a href="#" class="text-slate-400 hover:text-blue-600 text-xs font-bold uppercase tracking-widest transition-all">GitHub</a>
