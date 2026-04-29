@@ -1,0 +1,108 @@
+/**
+ * CyberLynX Documentation Stylesheet (Keycloak Inspired)
+ */
+
+:root {
+    --primary: #3b82f6; /* Keycloak Blue */
+    --primary-dark: #2563eb;
+    --primary-light: #eff6ff;
+    --sidebar-width: 288px;
+    --sidebar-collapsed-width: 80px;
+}
+
+/* Base Refinements */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f8fafc;
+}
+
+/* Layout System */
+#sidebar {
+    width: var(--sidebar-width);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#sidebar.collapsed {
+    width: var(--sidebar-collapsed-width);
+}
+
+#sidebar.collapsed .nav-text,
+#sidebar.collapsed .nav-header-text,
+#sidebar.collapsed #sidebar-logo-text {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Hero Background */
+.hero-gradient {
+    background: 
+        linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.7) 100%),
+        url('../assets/images/hero_background.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-overlay {
+    background: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+    background: #E2E8F0;
+    border-radius: 10px;
+}
+
+/* Navigation System */
+.nav-link {
+    color: #64748B;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    background: #f1f5f9;
+    color: var(--primary);
+}
+
+.nav-link.active {
+    background: var(--primary-light);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Smooth Scrolling */
+html { scroll-behavior: smooth; }
+section { scroll-margin-top: 120px; }
+
+/* News Bar */
+.news-bar {
+    background: #0f172a;
+    color: #94a3b8;
+    font-size: 0.75rem;
+}
+
+.news-tag {
+    background: #334155;
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Sticky Alignment */
+.on-this-page-sticky {
+    position: sticky;
+    top: 140px;
+}
