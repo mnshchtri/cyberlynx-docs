@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberLynX | Official Documentation</title>
+    <title>CyberLynX | Enterprise Security Orchestration</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fonts: Outfit for Display, Inter for Content -->
@@ -13,26 +13,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="bg-white text-slate-800 font-['Inter']">
-
-    <!-- Global News Bar -->
-    <div class="news-bar py-2 px-8 flex items-center justify-center gap-6 hidden md:flex">
-        <div class="flex items-center gap-2">
-            <span class="news-tag">News</span>
-            <a href="#" class="hover:text-white transition-colors">CyberLynX Core 2.1.0 Released</a>
-            <span class="text-slate-600">|</span>
-            <span class="text-slate-500 italic">22 Apr</span>
-        </div>
-        <div class="flex items-center gap-2">
-            <a href="#" class="hover:text-white transition-colors">New Security Blueprint: SQLi Scanner</a>
-            <span class="text-slate-600">|</span>
-            <span class="text-slate-500 italic">15 Apr</span>
-        </div>
-    </div>
 
     <!-- Main Navigation Header -->
     <header class="bg-white border-b border-slate-200 px-8 py-5 flex items-center justify-between sticky top-0 z-40">
@@ -43,19 +26,11 @@
             </div>
             
             <nav class="hidden md:flex gap-8 text-sm font-semibold text-slate-600">
-                <a href="#introduction" class="hover:text-blue-600 transition-colors">Overview</a>
-                <a href="#getting-started" class="hover:text-blue-600 transition-colors">Setup</a>
-                <a href="#cicd" class="hover:text-blue-600 transition-colors">CI/CD</a>
-                <a href="#project-structure" class="hover:text-blue-600 transition-colors">Project Map</a>
-                <a href="#legal" class="hover:text-blue-600 transition-colors">Legal</a>
+                <a href="#overview" class="nav-link active">Intelligence</a>
+                <a href="#interface" class="nav-link">Platform</a>
             </nav>
 
             <div class="flex-1 flex justify-end items-center gap-6">
-                <div class="hidden lg:flex items-center gap-1 bg-slate-50 px-3 py-1 rounded-md border border-slate-200 text-xs font-semibold text-slate-700">
-                    <i class="fab fa-github text-slate-400"></i> 
-                    <span>GitHub Stars</span>
-                    <span class="bg-white px-1.5 py-0.5 rounded border border-slate-200 ml-1">3.4k</span>
-                </div>
                 <a href="https://cyberlynx.manishkarki7.com.np" class="bg-blue-600 text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-md hover:bg-blue-700 transition-all">Get Started</a>
             </div>
         </div>
@@ -63,20 +38,23 @@
 
     <!-- Hero Section -->
     <section id="introduction" class="hero-gradient relative overflow-hidden border-b border-slate-100">
-        <div class="hero-overlay px-8 lg:px-20 py-24 flex flex-col lg:flex-row items-center justify-between gap-12 max-w-[1200px] mx-auto animate-fade-in">
-            <div class="max-w-2xl text-center lg:text-left">
+        <div class="hero-overlay px-8 lg:px-20 w-full flex flex-col lg:flex-row items-center justify-between gap-12 max-w-[1200px] mx-auto animate-fade-in">
+            <div class="max-w-2xl text-center lg:text-left py-12">
+                <div class="flex items-center justify-center lg:justify-start gap-3 mb-6">
+                    <span class="text-[10px] font-bold tracking-widest text-slate-600 uppercase border border-slate-300 bg-white px-3 py-1 rounded shadow-sm">Enterprise Edition</span>
+                </div>
                 <h1 class="font-['Outfit'] text-5xl lg:text-7xl font-bold text-slate-900 leading-tight mb-8">
-                    CyberLynX: <span class="text-blue-600">Official Documentation</span>
+                    CyberLynX: <span class="text-blue-600">Command Center</span>
                 </h1>
                 <p class="text-xl text-slate-600 mb-12 leading-relaxed">
-                    Advanced Security Orchestration & Automation Platform. Centralize toolsets, automate report generation, and manage targets with a modular platform designed for modern penetration testing missions.
+                    The orchestration engine for modern security teams. Centralize your toolsets, automate high-fidelity reporting, and manage complex attack surfaces through a single, modular interface.
                 </p>
                 <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-                    <a href="https://cyberlynx.manishkarki7.com.np" class="bg-blue-600 text-white px-10 py-4 rounded-lg text-lg font-bold shadow-xl hover:bg-blue-700 transition-all">Get Started</a>
-                    <a href="#getting-started" class="bg-white text-slate-900 border border-slate-200 px-10 py-4 rounded-lg text-lg font-bold shadow-sm hover:bg-slate-50 transition-all">Deployment Guide</a>
+                    <a href="https://cyberlynx.manishkarki7.com.np" class="bg-blue-600 text-white px-10 py-4 rounded-lg text-lg font-bold shadow-xl hover:bg-blue-700 transition-all">Launch Platform</a>
+                    <a href="contact.html" class="bg-white text-slate-900 border border-slate-200 px-10 py-4 rounded-lg text-lg font-bold shadow-sm hover:bg-slate-50 transition-all">Contact Sales</a>
                 </div>
             </div>
-            <div class="hidden lg:block w-[400px] h-[400px] relative">
+            <div class="hidden lg:block w-[400px] h-[400px] relative floating">
                 <img src="assets/images/New-logo.png" alt="CyberLynX New Logo" class="w-full h-full object-contain relative z-10 drop-shadow-2xl">
                 <div class="absolute inset-0 bg-blue-600/5 blur-3xl rounded-full"></div>
             </div>
@@ -84,250 +62,331 @@
     </section>
 
     <!-- Main Content Wrapper -->
-    <main class="max-w-[900px] mx-auto px-8 lg:px-0 py-24 scroll-smooth">
+    <main class="w-full scroll-smooth">
         
-        <!-- 1. Introduction & Overview -->
-        <section id="overview" class="mb-40">
-            <h2 class="font-['Outfit'] text-4xl font-bold text-slate-900 mb-8">1. Introduction & Overview</h2>
-            <p class="text-lg text-slate-600 mb-12 leading-relaxed">
-                CyberLynX is a comprehensive security tool designed to orchestrate, automate, and centralize security scanning and vulnerability analysis. It provides a unified interface for security professionals to manage distributed tools and analyze security data efficiently.
-            </p>
+        <!-- Modular Intelligence Center -->
+        <section id="overview" class="py-32 px-8 max-w-[1200px] mx-auto">
+            <div class="text-center mb-24">
+                <h2 class="font-['Outfit'] text-4xl lg:text-5xl font-bold text-slate-900 mb-6">Modular Intelligence</h2>
+                <p class="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+                    CyberLynX is an orchestration engine designed to centralize the fragmented security landscape. By unifying discovery, scanning, and analysis into a single ecosystem, we empower teams to act with surgical precision.
+                </p>
+            </div>
 
-            <h3 class="text-2xl font-bold text-slate-800 mb-8">🛠 Integrated Security Stack</h3>
-            <div class="grid md:grid-cols-2 gap-8 mb-16">
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                    <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2"><i class="fas fa-network-wired text-blue-500"></i> Network Discovery</h4>
-                    <p class="text-sm text-slate-500 font-mono">Nmap, Naabu</p>
+            <!-- Integrated Security Stack Grid -->
+            <div class="grid md:grid-cols-3 gap-6 mb-32">
+                <div class="code-card p-10 rounded-[2rem] flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                            <i class="fas fa-network-wired text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-4">Network Discovery</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Autonomous mapping of infrastructure and service discovery across global networks.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] font-bold px-3 py-1 bg-slate-50 border border-slate-100 rounded-md text-slate-400 font-mono uppercase">Nmap</span>
+                        <span class="text-[10px] font-bold px-3 py-1 bg-slate-50 border border-slate-100 rounded-md text-slate-400 font-mono uppercase">Naabu</span>
+                    </div>
                 </div>
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                    <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2"><i class="fas fa-shield-virus text-emerald-500"></i> Vulnerability Scanning</h4>
-                    <p class="text-sm text-slate-500 font-mono">Nuclei, Nikto, Trivy</p>
+
+                <div class="code-card p-10 rounded-[2rem] flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                            <i class="fas fa-shield-virus text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-4">Vulnerability Scanning</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">High-fidelity analysis for known vulnerabilities, misconfigurations, and CVE exposures.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] font-bold px-3 py-1 bg-slate-50 border border-slate-100 rounded-md text-slate-400 font-mono uppercase">Nuclei</span>
+                        <span class="text-[10px] font-bold px-3 py-1 bg-slate-50 border border-slate-100 rounded-md text-slate-400 font-mono uppercase">Nikto</span>
+                        <span class="text-[10px] font-bold px-3 py-1 bg-slate-50 border border-slate-100 rounded-md text-slate-400 font-mono uppercase">Trivy</span>
+                    </div>
                 </div>
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                    <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2"><i class="fas fa-search-location text-rose-500"></i> Reconnaissance</h4>
-                    <p class="text-sm text-slate-500 font-mono">Subfinder, HTTpx</p>
+
+                <div class="code-card p-10 rounded-[2rem] flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                            <i class="fas fa-magnifying-glass text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-4">Asset Intelligence</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Deep reconnaissance and subdomain enumeration to visualize the entire attack surface.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] font-bold px-3 py-1 bg-slate-50 border border-slate-100 rounded-md text-slate-400 font-mono uppercase">Subfinder</span>
+                        <span class="text-[10px] font-bold px-3 py-1 bg-slate-50 border border-slate-100 rounded-md text-slate-400 font-mono uppercase">Amass</span>
+                    </div>
                 </div>
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                    <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2"><i class="fas fa-spider text-amber-500"></i> Fuzzing & Crawling</h4>
-                    <p class="text-sm text-slate-500 font-mono">FFuf, Katana</p>
+
+                <div class="code-card p-10 rounded-[2rem] flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-rose-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-rose-600 group-hover:text-white transition-all">
+                            <i class="fas fa-code text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-4">Web Security</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Advanced fuzzing and crawling of web applications to identify hidden endpoints.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] font-bold px-3 py-1 bg-slate-50 border border-slate-100 rounded-md text-slate-400 font-mono uppercase">Katana</span>
+                        <span class="text-[10px] font-bold px-3 py-1 bg-slate-50 border border-slate-100 rounded-md text-slate-400 font-mono uppercase">Ffuf</span>
+                    </div>
                 </div>
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                    <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2"><i class="fas fa-microscope text-indigo-500"></i> Analysis</h4>
-                    <p class="text-sm text-slate-500 font-mono">CVEMap, Wappalyzer</p>
+
+                <div class="code-card p-10 rounded-[2rem] flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-amber-600 group-hover:text-white transition-all">
+                            <i class="fas fa-microscope text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-4">Deep Analysis</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Multi-dimensional correlation of scan data to prioritize remediation efforts.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] font-bold px-3 py-1 bg-slate-50 border border-slate-100 rounded-md text-slate-400 font-mono uppercase">CVEMap</span>
+                        <span class="text-[10px] font-bold px-3 py-1 bg-slate-50 border border-slate-100 rounded-md text-slate-400 font-mono uppercase">Wappalyzer</span>
+                    </div>
                 </div>
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                    <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2"><i class="fas fa-user-secret text-slate-700"></i> Exploitation</h4>
-                    <p class="text-sm text-slate-500 font-mono">Hydra, SQLMap</p>
+
+                <div class="code-card p-10 rounded-[2rem] flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-slate-900 group-hover:text-white transition-all">
+                            <i class="fas fa-user-secret text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-4">Targeted Exploitation</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Controlled validation of critical vulnerabilities through automated exploitation modules.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] font-bold px-3 py-1 bg-slate-50 border border-slate-100 rounded-md text-slate-400 font-mono uppercase">Hydra</span>
+                        <span class="text-[10px] font-bold px-3 py-1 bg-slate-50 border border-slate-100 rounded-md text-slate-400 font-mono uppercase">SQLMap</span>
+                    </div>
                 </div>
             </div>
 
-            <h3 class="text-2xl font-bold text-slate-800 mb-8">🚀 Key Features</h3>
-            <ul class="grid md:grid-cols-2 gap-6 mb-16">
-                <li class="flex items-start gap-3">
-                    <i class="fas fa-microchip text-blue-500 mt-1"></i>
-                    <div>
-                        <span class="font-bold text-slate-900 block">Multi-Architecture Support</span>
-                        <span class="text-sm text-slate-500">Native builds for both linux/amd64 and linux/arm64.</span>
-                    </div>
-                </li>
-                <li class="flex items-start gap-3">
-                    <i class="fas fa-cogs text-emerald-500 mt-1"></i>
-                    <div>
-                        <span class="font-bold text-slate-900 block">Enterprise CI/CD</span>
-                        <span class="text-sm text-slate-500">Fully automated pipeline with Jenkins integration.</span>
-                    </div>
-                </li>
-                <li class="flex items-start gap-3">
-                    <i class="fab fa-docker text-blue-400 mt-1"></i>
-                    <div>
-                        <span class="font-bold text-slate-900 block">Docker Optimized</span>
-                        <span class="text-sm text-slate-500">Multi-stage, performance-tuned Docker builds.</span>
-                    </div>
-                </li>
-                <li class="flex items-start gap-3">
-                    <i class="fas fa-layer-group text-rose-400 mt-1"></i>
-                    <div>
-                        <span class="font-bold text-slate-900 block">Scalable Architecture</span>
-                        <span class="text-sm text-slate-500">Go-based backend with a high-performance React frontend.</span>
-                    </div>
-                </li>
-            </ul>
+            <!-- Core Infrastructure Section -->
+            <div class="grid md:grid-cols-4 gap-12 py-24 border-y border-slate-100">
+                <div class="text-center md:text-left">
+                    <i class="fas fa-microchip text-3xl text-blue-600 mb-6"></i>
+                    <h5 class="font-bold text-slate-900 mb-3">Multi-Arch Engine</h5>
+                    <p class="text-sm text-slate-500">Native support for linux/amd64 and linux/arm64 infrastructure.</p>
+                </div>
+                <div class="text-center md:text-left">
+                    <i class="fas fa-shield-halved text-3xl text-emerald-600 mb-6"></i>
+                    <h5 class="font-bold text-slate-900 mb-3">Enterprise CI/CD</h5>
+                    <p class="text-sm text-slate-500">Continuous security pipelines with native Jenkins & GitLab integration.</p>
+                </div>
+                <div class="text-center md:text-left">
+                    <i class="fab fa-docker text-3xl text-blue-400 mb-6"></i>
+                    <h5 class="font-bold text-slate-900 mb-3">Docker Native</h5>
+                    <p class="text-sm text-slate-500">Lightweight, multi-stage builds optimized for rapid deployment.</p>
+                </div>
+                <div class="text-center md:text-left">
+                    <i class="fas fa-server text-3xl text-indigo-600 mb-6"></i>
+                    <h5 class="font-bold text-slate-900 mb-3">Go-Core Logic</h5>
+                    <p class="text-sm text-slate-500">High-concurrency backend engineered for low-latency analysis.</p>
+                </div>
+            </div>
         </section>
 
-        <!-- 2. Getting Started -->
-        <section id="getting-started" class="mb-40">
-            <h2 class="font-['Outfit'] text-4xl font-bold text-slate-900 mb-8">2. Getting Started</h2>
+        <!-- Platform Interface Gallery -->
+        <section id="interface" class="py-32 px-8 max-w-[1200px] mx-auto bg-slate-50/50 rounded-[3rem]">
+            <div class="text-center mb-24">
+                <h2 class="font-['Outfit'] text-4xl lg:text-5xl font-bold text-slate-900 mb-6">Interface Gallery</h2>
+                <p class="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">A command center built for elite performance. Explore the modules that drive CyberLynX security intelligence.</p>
+            </div>
             
-            <div class="bg-blue-50 border border-blue-100 rounded-3xl p-10 mb-12">
-                <h4 class="font-bold text-blue-900 mb-6 flex items-center gap-2"><i class="fas fa-list-check"></i> Prerequisites</h4>
-                <div class="grid sm:grid-cols-3 gap-8">
-                    <div class="flex flex-col">
-                        <span class="text-[10px] uppercase tracking-widest font-bold text-blue-400 mb-1">Runtime</span>
-                        <span class="font-bold text-blue-900">Go 1.25+</span>
+            <div class="space-y-32">
+                <!-- Security Overview -->
+                <div class="flex flex-col lg:flex-row items-center gap-16 group">
+                    <div class="lg:w-3/5 interface-image-container">
+                        <img src="assets/images/intelligence_center.png" alt="Security Overview Dashboard" class="w-full h-auto">
                     </div>
-                    <div class="flex flex-col">
-                        <span class="text-[10px] uppercase tracking-widest font-bold text-blue-400 mb-1">Environment</span>
-                        <span class="font-bold text-blue-900">Node.js 20+</span>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="text-[10px] uppercase tracking-widest font-bold text-blue-400 mb-1">Containerization</span>
-                        <span class="font-bold text-blue-900">Docker (Buildx)</span>
+                    <div class="lg:w-2/5">
+                        <div class="feature-badge">
+                            <i class="fas fa-gauge-high"></i>
+                            Command Center
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-6">Security Overview</h3>
+                        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                            Get a 360-degree view of your security posture. Monitor live scan activity, track vulnerability trends, and manage active targets through a high-fidelity dashboard designed for mission-critical awareness.
+                        </p>
+                        <div class="flex items-center gap-8 border-t border-slate-200 pt-8">
+                            <div>
+                                <span class="block text-2xl font-bold text-slate-900">45+</span>
+                                <span class="text-xs text-slate-500 uppercase font-bold tracking-tighter">Total Scans</span>
+                            </div>
+                            <div>
+                                <span class="block text-2xl font-bold text-rose-500">27</span>
+                                <span class="text-xs text-slate-500 uppercase font-bold tracking-tighter">Critical Issues</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <h3 class="text-2xl font-bold text-slate-800 mb-8">🐳 Quick Start with Docker</h3>
-            <div class="bg-slate-900 rounded-2xl p-8 border border-slate-800 font-mono text-sm text-slate-300 mb-12 shadow-2xl">
-                <div class="text-slate-500 mb-4"># Build the multi-arch image</div>
-                <div class="mb-6">docker build -t cyber-lynx:latest .</div>
-                <div class="text-slate-500 mb-4"># Run the local environment (Dual-container mode)</div>
-                <div class="mb-6">./start-containers.sh</div>
-                <div class="flex gap-10 mt-8 pt-8 border-t border-white/5">
-                    <div>
-                        <span class="block text-[10px] uppercase text-slate-500 mb-1">Frontend</span>
-                        <span class="text-blue-400">http://localhost:3000</span>
+                <!-- Workflows -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-16 group">
+                    <div class="lg:w-3/5 interface-image-container">
+                        <img src="assets/images/workflow_builder.png" alt="Visual Workflows" class="w-full h-auto">
                     </div>
-                    <div>
-                        <span class="block text-[10px] uppercase text-slate-500 mb-1">Backend API</span>
-                        <span class="text-blue-400">http://localhost:8080</span>
-                    </div>
-                </div>
-            </div>
-
-            <h3 class="text-2xl font-bold text-slate-800 mb-8">💻 Local Development</h3>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
-                    <h4 class="font-bold text-slate-900 mb-4">Backend</h4>
-                    <pre class="font-mono text-xs text-slate-600 bg-white p-4 rounded-lg border border-slate-200"><code>cd backend
-go mod download
-go run main.go</code></pre>
-                </div>
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
-                    <h4 class="font-bold text-slate-900 mb-4">Frontend</h4>
-                    <pre class="font-mono text-xs text-slate-600 bg-white p-4 rounded-lg border border-slate-200"><code>cd frontend
-npm install
-npm start</code></pre>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. CI/CD Pipeline -->
-        <section id="cicd" class="mb-40">
-            <h2 class="font-['Outfit'] text-4xl font-bold text-slate-900 mb-8">3. CI/CD Pipeline</h2>
-            <p class="text-lg text-slate-600 mb-12">CyberLynX includes a robust **Jenkinsfile** that automates the entire lifecycle of the application.</p>
-            
-            <div class="space-y-6">
-                <div class="flex items-center gap-6 p-6 bg-white border border-slate-200 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-stethoscope text-blue-500"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-900">Diagnostics</h4>
-                        <p class="text-sm text-slate-500">Environment and tool verification across multi-arch nodes.</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-6 p-6 bg-white border border-slate-200 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <i class="fab fa-golang text-emerald-500"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-900">Backend CI</h4>
-                        <p class="text-sm text-slate-500">Dependency management, security linting, and build validation.</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-6 p-6 bg-white border border-slate-200 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <i class="fab fa-react text-amber-500"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-900">Frontend CI</h4>
-                        <p class="text-sm text-slate-500">Automated production-optimized builds and artifact preservation.</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-6 p-6 bg-white border border-slate-200 rounded-2xl hover:shadow-lg transition-shadow">
-                    <div class="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <i class="fab fa-docker text-white"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-900">Docker Orchestration</h4>
-                        <p class="text-sm text-slate-500">Multi-arch builds pushed directly to Docker Hub.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Project Structure -->
-        <section id="project-structure" class="mb-40">
-            <h2 class="font-['Outfit'] text-4xl font-bold text-slate-900 mb-8">4. Project Structure</h2>
-            <div class="bg-slate-900 rounded-3xl p-10 font-mono text-sm text-slate-400 border border-slate-800 shadow-2xl overflow-x-auto">
-                <div class="flex items-center gap-2 mb-8">
-                    <div class="w-3 h-3 rounded-full bg-blue-500"></div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-slate-600">cyberlynx-orchestration /</span>
-                </div>
-                <div class="space-y-4">
-                    <div class="flex gap-4"><span class="text-blue-500">├── backend/</span> <span># Go security engine & API</span></div>
-                    <div class="flex gap-4"><span class="text-emerald-500">├── frontend/</span> <span># React professional dashboard</span></div>
-                    <div class="flex gap-4"><span class="text-amber-500">├── Jenkinsfile</span> <span># CI/CD pipeline definition</span></div>
-                    <div class="flex gap-4"><span class="text-blue-400">├── Dockerfile</span> <span># Multi-stage Docker build</span></div>
-                    <div class="flex gap-4"><span class="text-slate-500">└── start-containers.sh</span> <span># Orchestration script</span></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Legal (ToS & Privacy) -->
-        <section id="legal" class="mb-40">
-            <h2 class="font-['Outfit'] text-4xl font-bold text-slate-900 mb-12">5. Legal & Policies</h2>
-            
-            <div class="grid gap-16">
-                <!-- Terms of Service -->
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Terms of Service</h3>
-                    <div class="prose prose-slate text-sm text-slate-600 leading-relaxed space-y-4 max-w-none">
-                        <p>By using CyberLynX, you agree to the following terms:</p>
-                        <ul class="list-disc pl-5 space-y-2">
-                            <li><strong>Authorized Use:</strong> You represent that you have explicit permission to scan any target infrastructure you configure within the application.</li>
-                            <li><strong>Liability:</strong> CyberLynX is provided "as is" without warranty. Developers are not responsible for any misuse, data loss, or legal consequences resulting from the platform's operation.</li>
-                            <li><strong>Self-Hosted Integrity:</strong> You are responsible for securing the environment where CyberLynX is hosted.</li>
+                    <div class="lg:w-2/5">
+                        <div class="feature-badge" style="color: #059669; background: rgba(5, 150, 105, 0.05); border-color: rgba(5, 150, 105, 0.1);">
+                            <i class="fas fa-diagram-project"></i>
+                            Orchestration
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-6">Visual Workflow Canvas</h3>
+                        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                            The CyberLynX Orchestration Layer allows you to drag and drop security modules into complex attack chains. Automate reconnaissance, scanning, and exploitation with a visual nodes-and-links interface.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-sm text-slate-600 font-medium">
+                                <i class="fas fa-check-circle text-emerald-500"></i>
+                                Dynamic Node Connection
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-slate-600 font-medium">
+                                <i class="fas fa-check-circle text-emerald-500"></i>
+                                Parallel Tool Execution
+                            </li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Privacy Policy -->
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Privacy Policy</h3>
-                    <div class="prose prose-slate text-sm text-slate-600 leading-relaxed space-y-4 max-w-none">
-                        <p>CyberLynX is designed with a **Privacy-First** architecture:</p>
-                        <ul class="list-disc pl-5 space-y-2">
-                            <li><strong>No External Tracking:</strong> CyberLynX does not phone home or transmit vulnerability data to external servers.</li>
-                            <li><strong>Data Storage:</strong> All scan results and user profiles are stored in your configured MongoDB instance.</li>
-                            <li><strong>Authentication:</strong> JWT-based sessions ensure that your credentials never leave your local environment.</li>
-                        </ul>
+                <!-- AI Assistant -->
+                <div class="flex flex-col lg:flex-row items-center gap-16 group">
+                    <div class="lg:w-3/5 interface-image-container">
+                        <img src="assets/images/ai_assistant.png" alt="Kits AI Assistant" class="w-full h-auto">
+                    </div>
+                    <div class="lg:w-2/5">
+                        <div class="feature-badge" style="color: #4f46e5; background: rgba(79, 70, 229, 0.05); border-color: rgba(79, 70, 229, 0.1);">
+                            <i class="fas fa-microchip"></i>
+                            Multi-Model AI
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-6">Kits: Bring Your Own AI</h3>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            Integrate your own AI models using API keys from <strong>Claude, Gemini, and DeepSeek</strong>. Kits acts as your elite security co-pilot, providing real-time analysis of your attack surface, generating exploitation commands, and developing remediation reports tailored to your specific environment.
+                        </p>
                     </div>
                 </div>
 
-                <!-- License -->
-                <div class="bg-slate-50 rounded-3xl p-10 border border-slate-200">
-                    <h3 class="text-2xl font-bold text-slate-800 mb-4">📄 License</h3>
-                    <p class="text-sm text-slate-600 mb-6 italic">CyberLynX is distributed under the **MIT License**.</p>
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200 font-mono text-xs text-slate-500 leading-loose shadow-inner">
-                        Copyright (c) 2026 CyberLynX Maintainers<br><br>
-                        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so.
+                <!-- System Terminal -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-16 group">
+                    <div class="lg:w-3/5 interface-image-container">
+                        <img src="assets/images/system_terminal.png" alt="System Terminal" class="w-full h-auto">
+                    </div>
+                    <div class="lg:w-2/5">
+                        <div class="inline-flex items-center gap-2 bg-slate-900 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+                            <i class="fas fa-terminal"></i>
+                            Terminal
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-6">Integrated XTerm Engine</h3>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            Direct system access through a persistent, high-performance terminal. Execute custom scripts, manage containerized environments, and debug your tools without leaving the CyberLynX ecosystem.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Security Notebook -->
+                <div class="flex flex-col lg:flex-row items-center gap-16 group">
+                    <div class="lg:w-3/5 interface-image-container">
+                        <img src="assets/images/notebook.png" alt="Security Notebook" class="w-full h-auto">
+                    </div>
+                    <div class="lg:w-2/5">
+                        <div class="feature-badge" style="color: #e11d48; background: rgba(225, 29, 72, 0.05); border-color: rgba(225, 29, 72, 0.1);">
+                            <i class="fas fa-book"></i>
+                            Knowledge Base
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-6">Collaborative Notebook</h3>
+                        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                            Document findings and collaborate on reports with an integrated markdown-supported notebook. Capture evidence, link vulnerability data, and generate professional penetration testing reports.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tactical Units -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-16 group">
+                    <div class="lg:w-3/5 interface-image-container">
+                        <img src="assets/images/tactical_units.png" alt="Tactical Units Dashboard" class="w-full h-auto">
+                    </div>
+                    <div class="lg:w-2/5">
+                        <div class="feature-badge" style="color: #0891b2; background: rgba(8, 145, 178, 0.05); border-color: rgba(8, 145, 178, 0.1);">
+                            <i class="fas fa-users-gear"></i>
+                            Team Operations
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-6">Tactical Units & Roster</h3>
+                        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                            Scale your operations with multi-user workspaces. Manage active personnel, coordinate through secure communication channels, and share encrypted assets across your entire tactical unit.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 p-4 bg-white rounded-2xl border border-slate-200">
+                                <i class="fas fa-shield-halved text-cyan-500 text-xl"></i>
+                                <div>
+                                    <h4 class="text-sm font-bold text-slate-900">Encrypted Communications</h4>
+                                    <p class="text-xs text-slate-500">Secure, ephemeral team chat for operational coordination.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 p-4 bg-white rounded-2xl border border-slate-200">
+                                <i class="fas fa-id-badge text-cyan-500 text-xl"></i>
+                                <div>
+                                    <h4 class="text-sm font-bold text-slate-900">Personnel Management</h4>
+                                    <p class="text-xs text-slate-500">Track specialized skills and deployment status of all units.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Footer -->
-        <footer class="pt-20 border-t border-slate-100 text-center pb-20">
-            <p class="text-slate-400 text-sm">© 2026 CyberLynX Security Platforms. Open Source MIT Licensed.</p>
-            <div class="flex justify-center gap-10 mt-8">
-                <a href="#" class="text-slate-400 hover:text-blue-600 text-xs font-bold uppercase tracking-widest transition-all">Twitter</a>
-                <a href="#" class="text-slate-400 hover:text-blue-600 text-xs font-bold uppercase tracking-widest transition-all">GitHub</a>
-                <a href="#" class="text-slate-400 hover:text-blue-600 text-xs font-bold uppercase tracking-widest transition-all">Discord</a>
-            </div>
-        </footer>
-
     </main>
+
+    <!-- Premium Footer -->
+    <footer class="bg-slate-900 text-slate-300 pt-24 pb-12">
+        <div class="max-w-[1200px] mx-auto px-8">
+            <!-- CTA Section -->
+            <div class="bg-blue-600 rounded-3xl p-10 lg:p-16 mb-24 flex flex-col lg:flex-row items-center justify-between gap-10 shadow-2xl relative overflow-hidden group">
+                <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+                <div class="relative z-10 text-center lg:text-left">
+                    <h2 class="font-['Outfit'] text-3xl lg:text-4xl font-bold text-white mb-4">Ready to secure your infrastructure?</h2>
+                    <p class="text-blue-100 text-lg opacity-90">Join hundreds of security teams orchestrating their stack with CyberLynX.</p>
+                </div>
+                <a href="https://cyberlynx.manishkarki7.com.np" class="relative z-10 bg-white text-blue-600 px-10 py-4 rounded-xl text-lg font-bold shadow-xl hover:scale-105 transition-all flex items-center gap-3">
+                    Launch Command Center
+                    <i class="fas fa-external-link-alt text-sm"></i>
+                </a>
+            </div>
+
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-20">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-3 mb-8">
+                        <img src="assets/images/New-logo.png" alt="CyberLynX Logo" class="h-8 w-auto brightness-0 invert">
+                        <span class="font-['Outfit'] font-bold text-xl text-white tracking-tight">CyberLynX</span>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed max-w-sm">
+                        Advancing security orchestration through modular, privacy-first automation. Built for the modern security professional.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Resources</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="#overview" class="hover:text-blue-400 transition-colors">Intelligence Center</a></li>
+                        <li><a href="#interface" class="hover:text-blue-400 transition-colors">Platform Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Platform</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="https://cyberlynx.manishkarki7.com.np" class="hover:text-blue-400 transition-colors">CyberLynX Cloud</a></li>
+                        <li><a href="https://cyberlynx.manishkarki7.com.np" class="hover:text-blue-400 transition-colors">Enterprise Login</a></li>
+                        <li><a href="contact.html" class="hover:text-blue-400 transition-colors">Contact Sales</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+                <div class="text-xs text-slate-500 font-medium uppercase tracking-widest w-full">
+                    &copy; 2026 CyberLynX Security Platforms. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Core Script -->
     <script src="js/script.js"></script>
