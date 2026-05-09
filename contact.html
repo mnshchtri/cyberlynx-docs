@@ -25,7 +25,7 @@
     </header>
 
     <!-- Contact Form Section -->
-    <main class="flex-grow flex items-center justify-center py-20 px-8 contact-hero">
+    <main class="flex-grow flex items-center justify-center py-12 px-8 contact-hero min-h-[calc(100vh-64px)]">
         <div class="max-w-[1000px] w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
             
             <!-- Left Side: Value Prop -->
@@ -66,31 +66,33 @@
             <div class="bg-white/5 backdrop-blur-3xl rounded-[2.5rem] p-10 lg:p-14 shadow-2xl border border-white/10 relative overflow-hidden">
                 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
                 
-                <form action="#" class="space-y-6">
+                <form name="contact" method="POST" netlify class="space-y-6">
+                    <input type="hidden" name="form-name" value="contact" />
+                    
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2">First Name</label>
-                            <input type="text" placeholder="John" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-xl focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white text-xs placeholder:text-slate-600">
+                            <input type="text" name="first-name" placeholder="John" required class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-xl focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white text-xs placeholder:text-slate-600">
                         </div>
                         <div>
                             <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2">Last Name</label>
-                            <input type="text" placeholder="Doe" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-xl focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white text-xs placeholder:text-slate-600">
+                            <input type="text" name="last-name" placeholder="Doe" required class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-xl focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white text-xs placeholder:text-slate-600">
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2">Work Email</label>
-                        <input type="email" placeholder="john@company.com" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-xl focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white text-xs placeholder:text-slate-600">
+                        <input type="email" name="email" placeholder="john@company.com" required class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-xl focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white text-xs placeholder:text-slate-600">
                     </div>
 
                     <div>
                         <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2">Company Name</label>
-                        <input type="text" placeholder="Security Corp" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-xl focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white text-xs placeholder:text-slate-600">
+                        <input type="text" name="company" placeholder="Security Corp" required class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-xl focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white text-xs placeholder:text-slate-600">
                     </div>
 
                     <div>
                         <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2">How can we help?</label>
-                        <textarea rows="4" placeholder="Tell us about your security goals..." class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-xl focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white text-xs resize-none placeholder:text-slate-600"></textarea>
+                        <textarea name="message" rows="4" placeholder="Tell us about your security goals..." required class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-xl focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white text-xs resize-none placeholder:text-slate-600"></textarea>
                     </div>
 
                     <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold shadow-[0_10px_30px_rgba(37,99,235,0.3)] hover:bg-blue-500 hover:-translate-y-1 transition-all duration-300 text-sm">
@@ -104,11 +106,5 @@
             </div>
         </div>
     </main>
-
-    <!-- Simplified Footer -->
-    <footer class="py-12 border-t border-white/5 text-center">
-        <p class="text-[10px] font-bold text-slate-600 uppercase tracking-[0.3em]">&copy; 2026 CyberLynX Security Platforms. Engineered for Excellence.</p>
-    </footer>
-
 </body>
 </html>
