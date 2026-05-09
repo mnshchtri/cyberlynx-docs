@@ -28,7 +28,23 @@ class NavigationManager {
     }
 
     init() {
-        window.addEventListener('scroll', () => this.spy());
+        window.addEventListener('scroll', () => {
+            this.spy();
+            this.handleHeaderScroll();
+        });
+    }
+
+    handleHeaderScroll() {
+        const header = document.getElementById('main-header');
+        const scrollPos = window.scrollY;
+
+        if (scrollPos > 50) {
+            header.classList.add('py-3', 'shadow-lg', 'bg-white');
+            header.classList.remove('py-5', 'bg-white/90');
+        } else {
+            header.classList.remove('py-3', 'shadow-lg', 'bg-white');
+            header.classList.add('py-5', 'bg-white/90');
+        }
     }
 
     spy() {

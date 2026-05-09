@@ -9,96 +9,96 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-slate-50 font-['Inter'] min-h-screen flex flex-col">
+<body class="bg-[#020617] text-slate-300 font-['Inter'] min-h-screen flex flex-col">
 
     <!-- Simple Glass Header -->
-    <header class="bg-white/80 backdrop-blur-md border-b border-slate-200 px-8 py-4 sticky top-0 z-50">
-        <div class="max-w-[1200px] mx-auto flex items-center justify-between">
+    <header class="bg-white/5 backdrop-blur-xl border-b border-white/5 px-8 py-4 sticky top-0 z-50">
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                <img src="assets/images/New-logo.png" alt="CyberLynX Logo" class="h-8 w-auto">
-                <span class="font-['Outfit'] font-bold text-lg text-slate-900 tracking-tight">CyberLynX</span>
+                <img src="assets/images/New-logo.png" alt="CyberLynX Logo" class="h-6 w-auto brightness-0 invert">
+                <span class="font-['Outfit'] font-bold text-lg text-white tracking-tight">CyberLynX</span>
             </a>
-            <a href="index.html" class="text-sm font-semibold text-slate-500 hover:text-blue-600 transition-colors">
+            <a href="index.html" class="text-[10px] font-bold text-slate-500 hover:text-white transition-all uppercase tracking-widest">
                 <i class="fas fa-arrow-left mr-2"></i> Back to Overview
             </a>
         </div>
     </header>
 
     <!-- Contact Form Section -->
-    <main class="flex-grow flex items-center justify-center py-20 px-8 hero-gradient">
-        <div class="max-w-[1000px] w-full grid lg:grid-cols-2 gap-12 items-center">
+    <main class="flex-grow flex items-center justify-center py-20 px-8 contact-hero">
+        <div class="max-w-[1000px] w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
             
             <!-- Left Side: Value Prop -->
             <div class="animate-fade-in">
                 <div class="inline-flex items-center gap-3 mb-6">
-                    <span class="text-[10px] font-bold tracking-widest text-slate-600 uppercase border border-slate-300 bg-white px-3 py-1 rounded shadow-sm">Enterprise Edition</span>
+                    <span class="text-[10px] font-bold tracking-widest text-blue-400 uppercase border border-blue-500/30 bg-blue-500/10 px-3 py-1 rounded shadow-lg backdrop-blur-md">Enterprise Edition</span>
                 </div>
-                <h1 class="font-['Outfit'] text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-8">
+                <h1 class="font-['Outfit'] text-3xl lg:text-4xl font-bold text-white leading-tight mb-6">
                     Let's scale your <span class="text-blue-600">Security Operations</span>
                 </h1>
-                <p class="text-lg text-slate-600 mb-12 leading-relaxed">
+                <p class="text-base text-slate-300 mb-10 leading-relaxed">
                     Schedule a personalized demo with our security architects to see how CyberLynX can centralize your toolset and automate your mission-critical reporting.
                 </p>
 
-                <div class="space-y-6">
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-check text-blue-600"></i>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                        <div class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-check text-blue-400 text-xs"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-900">Custom Blueprints</h4>
-                            <p class="text-sm text-slate-500">Tailored orchestration patterns for your unique tech stack.</p>
+                            <h4 class="text-sm font-bold text-white">Custom Blueprints</h4>
+                            <p class="text-xs text-slate-400">Tailored orchestration patterns for your unique tech stack.</p>
                         </div>
                     </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-emerald-50 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-shield-alt text-emerald-600"></i>
+                    <div class="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                        <div class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-shield-alt text-emerald-400 text-xs"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-900">Dedicated Support</h4>
-                            <p class="text-sm text-slate-500">24/7 access to our engineering team for deployment & scaling.</p>
+                            <h4 class="text-sm font-bold text-white">Dedicated Support</h4>
+                            <p class="text-xs text-slate-400">24/7 access to our engineering team for deployment & scaling.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Right Side: Form -->
-            <div class="bg-white rounded-3xl p-8 lg:p-12 shadow-2xl border border-slate-100 relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-full h-1.5 bg-blue-600"></div>
+            <div class="bg-white/5 backdrop-blur-3xl rounded-[2.5rem] p-10 lg:p-14 shadow-2xl border border-white/10 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
                 
                 <form action="#" class="space-y-6">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">First Name</label>
-                            <input type="text" placeholder="John" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 transition-all outline-none text-sm">
+                            <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2">First Name</label>
+                            <input type="text" placeholder="John" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-xl focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white text-xs placeholder:text-slate-600">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Last Name</label>
-                            <input type="text" placeholder="Doe" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 transition-all outline-none text-sm">
+                            <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2">Last Name</label>
+                            <input type="text" placeholder="Doe" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-xl focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white text-xs placeholder:text-slate-600">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Work Email</label>
-                        <input type="email" placeholder="john@company.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 transition-all outline-none text-sm">
+                        <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2">Work Email</label>
+                        <input type="email" placeholder="john@company.com" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-xl focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white text-xs placeholder:text-slate-600">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Company Name</label>
-                        <input type="text" placeholder="Security Corp" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 transition-all outline-none text-sm">
+                        <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2">Company Name</label>
+                        <input type="text" placeholder="Security Corp" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-xl focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white text-xs placeholder:text-slate-600">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">How can we help?</label>
-                        <textarea rows="4" placeholder="Tell us about your security goals..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/5 transition-all outline-none text-sm resize-none"></textarea>
+                        <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2">How can we help?</label>
+                        <textarea rows="4" placeholder="Tell us about your security goals..." class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-xl focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/10 transition-all outline-none text-white text-xs resize-none placeholder:text-slate-600"></textarea>
                     </div>
 
-                    <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold shadow-lg shadow-blue-600/20 hover:bg-blue-700 hover:-translate-y-0.5 transition-all">
+                    <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold shadow-[0_10px_30px_rgba(37,99,235,0.3)] hover:bg-blue-500 hover:-translate-y-1 transition-all duration-300 text-sm">
                         Request Enterprise Demo
                     </button>
                     
-                    <p class="text-[10px] text-center text-slate-400 leading-relaxed">
-                        By clicking "Request Enterprise Demo", you agree to our processing of your information in accordance with our enterprise security standards.
+                    <p class="text-[10px] text-center text-slate-500 leading-relaxed uppercase tracking-widest font-medium">
+                        Securely processed via CyberLynX Encryption.
                     </p>
                 </form>
             </div>
@@ -106,8 +106,8 @@
     </main>
 
     <!-- Simplified Footer -->
-    <footer class="py-8 border-t border-slate-200 text-center">
-        <p class="text-xs text-slate-400">&copy; 2026 CyberLynX Security Platforms. All Rights Reserved.</p>
+    <footer class="py-12 border-t border-white/5 text-center">
+        <p class="text-[10px] font-bold text-slate-600 uppercase tracking-[0.3em]">&copy; 2026 CyberLynX Security Platforms. Engineered for Excellence.</p>
     </footer>
 
 </body>

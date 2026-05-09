@@ -11,10 +11,17 @@
 }
 
 /* Base Refinements */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #f8fafc;
+    background-color: #020617; /* Dark background to prevent white flashes/lines */
 }
 
 /* Layout System */
@@ -35,24 +42,65 @@ body {
 }
 
 /* Hero Background Animation */
+/* Hero Background Video Styles */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.8; /* Increased visibility */
+}
+
 .hero-gradient {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #020617; /* Deep dark base */
+    overflow: hidden;
+}
+
+.hero-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Deepened directional gradient for maximum text legibility */
+    background: linear-gradient(to right, rgba(2, 6, 23, 0.95) 0%, rgba(2, 6, 23, 0.5) 50%, rgba(2, 6, 23, 0.1) 100%);
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Enhanced Text Visibility */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-logo-glow {
+    filter: brightness(0) invert(1) drop-shadow(0 0 30px rgba(59, 130, 246, 0.5));
+    transition: all 0.5s ease;
+}
+
+.hero-logo-glow:hover {
+    filter: brightness(0) invert(1) drop-shadow(0 0 50px rgba(59, 130, 246, 0.8));
+    transform: scale(1.02);
+}
+
+/* Contact Page Specific Hero */
+.contact-hero {
     background: 
-        linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(248, 250, 252, 0.2) 100%),
+        linear-gradient(135deg, rgba(2, 6, 23, 0.85) 0%, rgba(2, 6, 23, 0.6) 100%),
         url('../assets/images/hero_background.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    animation: panBackground 30s ease-in-out infinite alternate;
-}
-
-@keyframes panBackground {
-    0% { background-position: 0% 0%; background-size: 100% 100%; }
-    50% { background-position: 50% 50%; background-size: 110% 110%; }
-    100% { background-position: 100% 100%; background-size: 100% 100%; }
+    overflow: hidden;
 }
 
 /* Glassmorphism Header */
@@ -93,14 +141,15 @@ header {
     transform: translateY(-2px);
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb {
-    background: rgba(203, 213, 225, 0.5);
-    border-radius: 10px;
+/* Hide Scrollbar for a truly cinematic experience */
+::-webkit-scrollbar {
+    display: none;
 }
-::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.8); }
+
+html {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
 
 /* Navigation Refinements */
 .nav-link {
